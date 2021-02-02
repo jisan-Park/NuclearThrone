@@ -223,6 +223,10 @@ void Fish::contral()
 	{
 		_isdash = true;
 	}
+	if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+	{
+		_currentWeapon->fire();
+	}
 	if (_isdash)
 	{
 		if (_movedirctionx == RIGHTMOVE)

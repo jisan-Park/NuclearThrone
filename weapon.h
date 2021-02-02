@@ -1,4 +1,6 @@
 #pragma once
+#include "bullet16.h"
+#include "bullet1.h"
 
 enum weaponState
 {
@@ -27,6 +29,7 @@ protected:
 	POINT _pt;			// 좌표입니다
 	weaponState _state;	// 상태입니다
 	weaponType _type;	// 무기타입입니다
+	bullet* _bullet;
 	float _hwidth, _hheight; // 이미지 밀어주는 값입니당
 	float _angle;		// 조준각도입니다
 	float _meleeAngle;	// 근접무기 보정 해 줄 각도입니다
@@ -40,6 +43,7 @@ public:
 	~weapon() {};
 	virtual HRESULT init(POINT pt);
 	virtual void update();
+	virtual void fire();
 	void release();
 	void render(HDC hdc);
 	void setFrameIndex(float angle);

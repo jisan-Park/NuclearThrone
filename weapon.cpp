@@ -10,6 +10,10 @@ void weapon::update()
 {
 }
 
+void weapon::fire()
+{
+}
+
 void weapon::release()
 {
 }
@@ -17,6 +21,7 @@ void weapon::release()
 void weapon::render(HDC hdc)
 {
 	_img->frameRender(hdc, _pt.x - _hwidth, _pt.y - _hwidth, _index, 0);
+	_bullet->render(hdc);
 }
 
 void weapon::setFrameIndex(float angle)
